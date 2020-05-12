@@ -4,24 +4,23 @@ require_relative '../lib/config.rb'
 require_relative '../lib/bot.rb'
 require 'rubygems'
 require 'twitter'
-require 'rufus-scheduler'
 
-scheduler = Rufus::Scheduler.new
+config = Config.new
+bot = TwitterBot.new
 
-def run
-  i = 0
-  config = Config.new
-  bot = Bot.new
+start = true
+i = 0
+count = 1
+while start
   bot.post_tweet(config.client, bot.quotes[i])
-  bot.following(config.client)
-  bot.retweet_tweet(config.client, '#Motivation')
+  puts "#{count} tweets made"
+  sleep 43200
+  bot.twitter_following(config.client)
+  sleep 43200
+  bot.twitter_retweet(config.client, '#Motivation')
+  sleep 43200
+
+  count += 1
   i += 1
+  start = false
 end
-
-print run
-
-scheduler.every '12h' do
-  run
-end
-scheduler.join
-
