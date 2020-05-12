@@ -45,7 +45,6 @@ GEM
     multipart-post (2.1.1)
     naught (1.1.0)
     nio4r (2.5.2)
-    oauth (0.5.4)
     parallel (1.19.1)
     parser (2.7.1.2)
       ast (~> 2.4.0)
@@ -93,8 +92,6 @@ GEM
       multipart-post (~> 2.0)
       naught (~> 1.0)
       simple_oauth (~> 0.3.0)
-    twurl (0.9.5)
-      oauth (~> 0.4)
     tzinfo (2.0.2)
       concurrent-ruby (~> 1.0)
     unf (0.1.4)
@@ -114,7 +111,6 @@ DEPENDENCIES
   rubocop
   rufus-scheduler
   twitter
-  twurl
 
 BUNDLED WITH
    2.1.4

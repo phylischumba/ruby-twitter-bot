@@ -12,8 +12,6 @@ gem 'twitter'
 
 gem 'rufus-scheduler'
 
-gem 'twurl'
-
 gem 'rspec'
 
 gem 'puma'

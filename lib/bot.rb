@@ -3,11 +3,10 @@ require 'twitter'
 require 'dotenv'
 Dotenv.load
 
-class Bot
+class TwitterBot
   attr_reader :quotes
   # rubocop disable: Layout/LineLength
   def initialize
-    @arr = []
     @quotes = ['You cannot swim for new horizons until you have the courage to lose sight of the shore',
                "Sometimes, I dream of becoming real, but I don't know if that is real, or just part of my programming",
                'Any fool can write code that a computer can understand',
@@ -20,6 +19,7 @@ class Bot
   end
 
   # rubocop enable: Layout/LineLength
+  
   def post_tweet(client, status)
     client.update(status)
   end
@@ -39,7 +39,7 @@ class Bot
   end
 
   def twitter_retweet(client, hashtag)
-    check_tweet(client, hashtag).take(3).each do |tweet|
+    check_tweet(client, hashtag).take(2).each do |tweet|
       client.retweet(tweet)
     end
   end
