@@ -20,26 +20,26 @@ class Bot
   end
 
   # rubocop enable: Layout/LineLength
-  def tweet(client, status)
+  def post_tweet(client, status)
     client.update(status)
   end
 
-  def following(client)
-    followees = []
-    client.search('#motivation', result_type: 'recent').take(10).each do |tweet|
-      followees << tweet.user.screen_name
+  def twitter_following(client)
+    followed = []
+    client.search('#motivation', result_type: 'recent').take(20).each do |tweet|
+      followed << tweet.user.screen_name
     end
-    puts	followees.uniq!
+    puts	followed.uniq!
 
-    client.follow(followees).uniq!
+    client.follow(followed).uniq!
   end
 
-  def search_tweet(client, hashtag)
+  def check_tweet(client, hashtag)
     client.search(hashtag)
   end
 
-  def retweet_tweet(client, hashtag)
-    search_tweet(client, hashtag).take(3).each do |tweet|
+  def twitter_retweet(client, hashtag)
+    check_tweet(client, hashtag).take(3).each do |tweet|
       client.retweet(tweet)
     end
   end
