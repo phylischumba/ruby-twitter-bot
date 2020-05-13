@@ -1,6 +1,7 @@
 require 'twitter'
 require 'dotenv/load'
 Dotenv.load
+
 class Config
   attr_reader :client
   def initialize

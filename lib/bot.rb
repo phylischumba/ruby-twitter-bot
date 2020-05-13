@@ -26,7 +26,7 @@ class TwitterBot
 
   def twitter_following(client)
     followed = []
-    client.search('#motivation', result_type: 'recent').take(20).each do |tweet|
+    client.search('#Motivation', result_type: 'recent').take(10).each do |tweet|
       followed << tweet.user.screen_name
     end
     puts	followed.uniq!
@@ -39,7 +39,7 @@ class TwitterBot
   end
 
   def twitter_retweet(client, hashtag)
-    check_tweet(client, hashtag).take(2).each do |tweet|
+    check_tweet(client, hashtag).take(3).each do |tweet|
       client.retweet(tweet)
     end
   end
