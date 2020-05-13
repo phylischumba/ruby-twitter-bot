@@ -3,24 +3,22 @@ require_relative '../lib/bot.rb'
 require_relative '../lib/config.rb'
 
 describe TwitterBot do
-  let(:bot) {TwitterBot.new }
-  let(:config) {Config.new }
-  let(:client) {config.client }
-
-
+  let(:bot) { TwitterBot.new }
+  let(:config) { Config.new }
+  let(:client) { config.client }
 
   describe '#post_tweet' do
     it 'if tweet is posted by an authorized user, it returns a tweet object' do
       expect(bot.post_tweet(config.client, 'Curiosity sparkles passion ')).to be_instance_of(Twitter::Tweet)
     end
     it 'returns argument error if no user and tweet is given' do
-      expect{bot.post_tweet}.to raise_error(ArgumentError)
+      expect { bot.post_tweet }.to raise_error(ArgumentError)
     end
   end
 
   describe '#twitter_following' do
     it 'returns argument error if none is given' do
-      expect {bot.twitter_following}.to raise_error(ArgumentError)
+      expect { bot.twitter_following }.to raise_error(ArgumentError)
     end
   end
 
@@ -40,6 +38,13 @@ describe TwitterBot do
       expect { bot.twitter_retweet }.to raise_error(ArgumentError)
     end
   end
+end
 
- 
+describe Config do
+  let(:config) { Config.new }
+  describe '#initialize' do
+    it 'should initialize as Config class' do
+      expect(config.class).to eql(Config)
+    end
+  end
 end

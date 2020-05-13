@@ -19,7 +19,7 @@ class TwitterBot
   end
 
   # rubocop enable: Layout/LineLength
-  
+
   def post_tweet(client, status)
     client.update(status)
   end
