@@ -12,14 +12,13 @@ start = true
 i = 0
 count = 1
 loop do
-  bot.post_tweet(config.client, bot.quotes[i] + ' #Motivation #DailyQuotes')
+  bot.post_tweet(config.client, bot.quotes[i])
   puts "#{count} tweets made"
-  sleep 14_400
+  sleep 3600
   bot.twitter_following(config.client)
-  sleep 14_400
+  sleep 3600
   bot.twitter_retweet(config.client, '#Motivation')
-  sleep 14_400
-
+  sleep 3600
   count += 1
   i += 1
   start = false

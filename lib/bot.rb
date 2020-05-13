@@ -19,7 +19,7 @@ class TwitterBot
   end
 
   # rubocop enable: Layout/LineLength
-
+  
   def post_tweet(client, status)
     client.update(status)
   end
@@ -29,8 +29,6 @@ class TwitterBot
     client.search('#Motivation', result_type: 'recent').take(10).each do |tweet|
       followed << tweet.user.screen_name
     end
-    puts	followed.uniq!
-
     client.follow(followed).uniq!
   end
 
