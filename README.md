@@ -28,11 +28,11 @@ To get a local copy up and running follow these simple example steps.
 
 ### Confirmation that the first tweet is made
 
-![screenshot](11.png)
+![screenshot](12.png)
 
 ### A tweet already posted
 
-![screenshot](12.png)
+![screenshot](11.png)
 
 ## Built with
 
