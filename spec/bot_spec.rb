@@ -1,5 +1,4 @@
 require 'rspec'
-
 require_relative '../lib/bot.rb'
 require_relative '../lib/config.rb'
 
@@ -29,7 +28,7 @@ describe TwitterBot do
     end
     it 'returns error when wrong number or no arguments is given' do
       expect { bot.check_tweet }.to raise_error(ArgumentError)
-    en
+    end
   end
   describe '#twitter_retweet' do
     it 'returns retweeted tweets in an array' do
