@@ -2,24 +2,37 @@
 
 This is a twitter bot written with the Ruby language. Its main fuction is to post tweets, retweet specifics with a given hashtag and follow them.
 
+### How it works
+
+- It checks for given tweets and updates its status on twitter
+- It then looks for #Motivation
+- It picks the firt 10tweets with the hashtag and retweets
+- It then picks two tweets made with #motivation hashtag and follows the user back
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
+#### Prerequisites
 
 - Ruby
 - Twitter Developer account
 - API keys[Access keys](https://developer.twitter.com/en/apply-for-access)
 
-### Setup
+#### Setup
 
-- Clone the repository
-- Create developer account on Twitter
-- Create an app
-- GET API Keys
-- Use the template env_template and replace it with your API Keys
-- Execute `main.rb` file from your terminal
+- Clone the repository into your local machine.
+- Install all the dependencies using bundle install
+- Rename .env-template file in bin directory to .env and provide your API keys.
+- Run main.rb in bin directory.
+
+### Confirmation that the first tweet is made
+
+![screenshot](11.png)
+
+### A tweet already posted
+
+![screenshot](12.png)
 
 ## Built with
 
@@ -31,7 +44,7 @@ To get a local copy up and running follow these simple example steps.
 👤 **Phylis Chepchumba**
 
 - Github: [@Phlylis05](https://github.com/phlylis05)
-- Linkedin: [PhylisChepchumba](https://linkedin.com/PhylisChepchumba)
+- Linkedin: [Phylis Chepchumba](https://linkedin.com/PhylisChepchumba)
 - Twitter: [chepchumba05](https://twitter.com/chepchumba05)
 
 ## 🤝 Contributing
